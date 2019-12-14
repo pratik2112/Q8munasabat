@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6fc9eb</color>
+    <color name="colorPrimaryDark">#6fc9eb</color>
+    <color name="colorAccent">@color/darkBlue</color>
+
+    <color name="accent_trans_bg">#22ec0834</color>
+    <color name="main_bg">#FAFAFA</color>
+    <color name="white">#FFF</color>
+    <color name="black">#000</color>
+    <color name="grey">#dfdfdf</color>
+    <color name="red">#ec0834</color>
+    <color name="yellow">#fa0</color>
+    <color name="green">#0F6533</color>
+    <color name="lightGreen">#19BD00</color>
+    <color name="lightBlue">#80daea</color>
+    <color name="darkBlue">#317bcf</color>
+
+    <color name="white_80">#8cFFFFFF</color>
+    <color name="black_80">#8c000000</color>
+    <color name="textColorPrimary">#ff333333</color>
+    <color name="textColorSecondary">#ff757575</color>
+    <color name="transparent">#00000000</color>
+    <color name="divider">#424242</color>
+
+    <color name="addresstype_bg2">#919191</color>
+    <color name="actionbar_opacity">#33000000</color>
+
+    <color name="color_gray_alpha">#65b7b7b7</color>
+    <color name="app_blue">#0e1f2f</color>
+    <color name="text_color">#000000</color>
+    <color name="seekbar_color">#3be3e3</color>
+    <color name="line_color">#FF15FF00</color>
+    <color name="shadow_color">#00000000</color>
+
+    <color name="dialog_choose_icon_color">#757575</color>
+    <color name="dialog_choose_text_color">#757575</color>
+
+    <color name="uvv_gray">#969696</color>
+    <color name="uvv_black">#ff000000</color>
+    <color name="uvv_light_gray">#ffF0F0F0</color>
+    <color name="uvv_titlebar_bg">#7f000000</color>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/tv_5"
+        android:layout_marginTop="@dimen/tv_5"
+        android:layout_marginRight="@dimen/tv_5" />
+
+    <TextView
+        android:id="@+id/tv_empty"
+        style="@style/lblSemiB"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textSize="@dimen/sp_15"
+        android:visibility="gone" />
+
+</RelativeLayout>

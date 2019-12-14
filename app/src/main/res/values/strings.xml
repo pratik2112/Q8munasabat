@@ -1,0 +1,97 @@
+<resources>
+    <string name="app_name">Q8munasabat</string>
+
+    <string name="coming_son">Coming Soon</string>
+    <string name="noNetworkFound">You\'re not connected to the Internet. Please connect and retry. </string>
+    <string name="msg_NO_INTERNET_RESPOND">Please connect your internet connection</string>
+    <string name="msg_please_wait">Please wait …</string>
+    <string name="msg_server_error">Something went wrong please try again</string>
+    <string name="msg_press_back_twice">Double tab to back</string>
+
+    <string name="dialog_yes">YES</string>
+    <string name="dialog_no">NO</string>
+    <string name="dialog_ok">OK</string>
+
+    <string name="str_or">OR</string>
+    <string name="str_submit">Submit</string>
+
+    <string name="str_are_u_sure">Are you sure ?</string>
+    <string name="str_deactive_msg">Do you want to deactive account ?</string>
+    <string name="str_del_ad">Do you want to delete ?</string>
+    <string name="str_logout">Do you want to logout ?</string>
+    <string name="str_remove">Do you want to remove ?</string>
+
+    <string name="str_govern">Governorate</string>
+    <string name="str_city">City</string>
+
+    <string name="str_call">Call</string>
+    <string name="str_whatsap">Whatsapp</string>
+    <string name="str_adver_ci">Contact Information</string>
+    <string name="str_share">Share social media</string>
+    <string name="str_acunt_mgnt">Account management</string>
+    <string name="str_chng_pwd">Change Password</string>
+    <string name="str_share_phn">Share Phone Number</string>
+    <string name="str_deactive">Deactive account</string>
+    <string name="str_deactive1">Account Deactivated</string>
+    <string name="str_deactive2">Your account deactivated by you. Do you want to reactivate it again?</string>
+    <string name="str_deactive3">Kindly check your email, to reactivate your account.</string>
+    <string name="str_deactive4">Your account deactivated by the admin.</string>
+    <string name="str_lang_e">English</string>
+    <string name="str_lang_a">عربى</string>
+
+    <string name="tit_login">LOGIN</string>
+    <string name="tit_signup">SIGN UP</string>
+    <string name="tit_code_verify">CODE VERIFICATION</string>
+    <string name="tit_home">HOME</string>
+    <string name="tit_forgt">Forgot Password</string>
+    <string name="tit_profile">PROFILE</string>
+    <string name="tit_edit_profile">Edit Profile</string>
+    <string name="tit_setting">Settings</string>
+    <string name="tit_chos_lang">CHOOSE LANGUAGE</string>
+    <string name="tit_chng_pwd">Change Password</string>
+    <string name="tit_filtr">Filter</string>
+    <string name="tit_cate">CATEGORY</string>
+
+    <string name="str_filter1">Apply Filter</string>
+    <string name="str_sub1">Name</string>
+    <string name="str_email">Email</string>
+    <string name="str_mobil">2234 5678</string>
+
+    <string name="menu_title_1">Home</string>
+    <string name="menu_title_2">My favorites</string>
+    <string name="menu_title_3">Post Event</string>
+    <string name="menu_title_4">Profile</string>
+    <string name="menu_title_5">More</string>
+    <string name="menu_title_6">My Ads</string>
+    <string name="menu_title_7">Advertise with us</string>
+    <string name="menu_title_8">Notifications</string>
+    <string name="menu_title_9">About Us</string>
+    <string name="menu_title_10">Terms Condition</string>
+    <string name="menu_title_11">Privacy Policy</string>
+    <string name="menu_title_12">Settings</string>
+    <string name="menu_title_13">Log out</string>
+
+    <string name="tab_title_1">All Categories</string>
+    <string name="tab_title_2">Recent</string>
+    <string name="tab_title_3">Map</string>
+
+    <string name="err_name">Please enter your name</string>
+    <string name="err_fname">Please enter your first name</string>
+    <string name="err_lname">Please enter your last name</string>
+    <string name="err_mobil">Please enter your phone number</string>
+    <string name="err_old_pwd">Please enter your old password</string>
+    <string name="err_new_pwd">Please enter your new password</string>
+    <string name="err_email_mobil">Please enter your email or mobile number</string>
+    <string name="err_email">Please enter your email address</string>
+    <string name="err_valid_email">Please enter valid your email address</string>
+    <string name="err_pwd">Please enter your password</string>
+    <string name="err_pwd1"> Please enter password between 6 to 20 characters !</string>
+    <string name="err_conf_pwd">Please enter your confirm password</string>
+    <string name="err_conf_pwd1">Please enter confirm password between 6 to 20 characters !</string>
+    <string name="err_invalid">Invalid email or password</string>
+    <string name="err_mismatch">Password and confirm password doesn\'t match</string>
+
+    <string name="subject">Download Amazing app from play store : </string>
+    <string name="google_url">https://play.google.com/store/apps/details?id=</string>
+
+</resources>
