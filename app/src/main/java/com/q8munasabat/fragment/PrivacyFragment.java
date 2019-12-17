@@ -79,6 +79,7 @@ public class PrivacyFragment extends BaseFragment {
     private void inticompnets() {
         try {
             ((DashboardActivity) getActivity()).setTitle(getString(R.string.menu_title_11));
+            ((DashboardActivity) getActivity()).shouldDisplayHomeUp(true);
             getPrivacyContent();
         } catch (Exception e) {
             e.printStackTrace();

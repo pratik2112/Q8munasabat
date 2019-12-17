@@ -4,20 +4,20 @@
     android:layout_height="match_parent"
     android:background="@color/main_bg">
 
-    <include layout="@layout/toolbar" />
+    <include layout="@layout/header_lay" />
 
     <include
-        layout="@layout/header_lay"
+        layout="@layout/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@+id/toolbar" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_head" />
 
     <FrameLayout
         android:id="@+id/frame_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/tablayout"
-        android:layout_below="@+id/ll_head"
+        android:layout_below="@+id/toolbar"
         app:layout_behavior="com.q8munasabat.utills.FixScrollingFooterBehaviour" />
 
     <View

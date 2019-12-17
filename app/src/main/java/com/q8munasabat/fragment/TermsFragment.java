@@ -82,6 +82,7 @@ public class TermsFragment extends BaseFragment {
     private void inticompnets() {
         try {
             ((DashboardActivity) getActivity()).setTitle(getString(R.string.menu_title_10));
+            ((DashboardActivity) getActivity()).shouldDisplayHomeUp(true);
             getTermsContent();
         } catch (Exception e) {
             e.printStackTrace();

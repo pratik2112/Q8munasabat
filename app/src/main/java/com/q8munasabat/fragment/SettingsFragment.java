@@ -6,9 +6,6 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -16,7 +13,6 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.google.gson.Gson;
 import com.q8munasabat.R;
@@ -92,6 +88,8 @@ public class SettingsFragment extends BaseFragment {
     private void inticompnets() {
         try {
             ((DashboardActivity) getActivity()).setTitle(getString(R.string.tit_setting));
+            ((DashboardActivity) getActivity()).shouldDisplayHomeUp(true);
+
             if (CommonFunctions.getPreference(getContext(), Constants.isLogin, false))
                 ll_acunt.setVisibility(View.VISIBLE);
             else
@@ -114,7 +112,7 @@ public class SettingsFragment extends BaseFragment {
             /*if (CommonFunctions.getloginresponse(getActivity()) != null)
                 membr_id = CommonFunctions.getloginresponse(getActivity()).data.id;
             else*/
-                membr_id = "";
+            membr_id = "";
             String url = Q8MunasabatConfig.WEBURL + Q8MunasabatConfig.userdetailURL;
             Map<String, String> mParams = new HashMap<>();
             mParams.put(Constants.apikey, Q8MunasabatConfig.APIKEY);
@@ -209,7 +207,7 @@ public class SettingsFragment extends BaseFragment {
                /* if (CommonFunctions.getloginresponse(getContext()) != null)
                     membr_id = CommonFunctions.getloginresponse(getContext()).data.id;
                 else*/
-                    membr_id = "";
+                membr_id = "";
                 if (sw_share_phn.isChecked())
                     switch_check = "1";
                 else
@@ -260,7 +258,7 @@ public class SettingsFragment extends BaseFragment {
                         /*if (CommonFunctions.getloginresponse(getContext()) != null)
                             membr_id = CommonFunctions.getloginresponse(getContext()).data.id;
                         else*/
-                            membr_id = "";
+                        membr_id = "";
                         String url = Q8MunasabatConfig.WEBURL + Q8MunasabatConfig.deactiveacuntURL;
                         Map<String, String> mParams = new HashMap<>();
                         mParams.put(Constants.apikey, Q8MunasabatConfig.APIKEY);

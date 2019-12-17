@@ -79,6 +79,7 @@ public class AboutusFragment extends BaseFragment {
     private void inticompnets() {
         try {
             ((DashboardActivity) getActivity()).setTitle(getString(R.string.menu_title_9));
+            ((DashboardActivity) getActivity()).shouldDisplayHomeUp(true);
             getAboutContent();
         } catch (Exception e) {
             e.printStackTrace();

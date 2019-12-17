@@ -84,6 +84,7 @@ public class NotificationFragment extends BaseFragment {
     private void inticompnets() {
         try {
             ((DashboardActivity) getActivity()).setTitle(getString(R.string.menu_title_8));
+            ((DashboardActivity) getActivity()).shouldDisplayHomeUp(true);
             getTranscation();
         } catch (Exception e) {
             e.printStackTrace();
@@ -97,7 +98,7 @@ public class NotificationFragment extends BaseFragment {
                 /*if (CommonFunctions.getloginresponse(getContext()) != null)
                     membr_id = CommonFunctions.getloginresponse(getContext()).data.id;
                 else*/
-                    membr_id = "";
+                membr_id = "";
                 String url = Q8MunasabatConfig.WEBURL + Q8MunasabatConfig.getnotoficationuser;
                 Map<String, String> mParams = new HashMap<>();
                 mParams.put(Constants.apikey, Q8MunasabatConfig.APIKEY);

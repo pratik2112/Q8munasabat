@@ -88,6 +88,7 @@ public class AdvertiseWithUsFragment extends BaseFragment {
     private void inticompnets() {
         try {
             ((DashboardActivity) getActivity()).setTitle(getString(R.string.menu_title_7));
+            ((DashboardActivity) getActivity()).shouldDisplayHomeUp(true);
         } catch (Exception e) {
             e.printStackTrace();
         }

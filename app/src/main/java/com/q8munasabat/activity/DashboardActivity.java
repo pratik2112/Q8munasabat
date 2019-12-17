@@ -16,14 +16,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
-import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -53,19 +51,10 @@ import butterknife.ButterKnife;
 
 public class DashboardActivity extends BaseActivity {
 
-    @BindView(R.id.tv_title)
-    TextView tv_title;
-    @BindView(R.id.iv_back)
-    ImageView iv_back;
-    @BindView(R.id.iv_search)
-    ImageView iv_search;
-    @BindView(R.id.iv_profile)
-    ImageView iv_profile;
-    @BindView(R.id.iv_filter)
-    ImageView iv_filter;
-
     @BindView(R.id.toolbar)
     Toolbar toolbar;
+    @BindView(R.id.toolbar_title)
+    TextView toolbar_title;
     @BindView(R.id.tablayout)
     TabLayout tabLayout;
     @BindView(R.id.frame_container)
@@ -123,6 +112,7 @@ public class DashboardActivity extends BaseActivity {
                 }
             }
             //toolbar.setTitle(from);
+            toolbar_title.setText(from);
 
             preferences = PreferenceManager.getDefaultSharedPreferences(this);
             final String strLang = preferences.getString(Constants.languageid, "0");
@@ -259,6 +249,10 @@ public class DashboardActivity extends BaseActivity {
                                 onBackPressed();
                             }
                         });
+                    } else {
+                        //show hamburger
+                        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+                        // toolbar.setTitle("");
                     }
                 }
             });
@@ -315,7 +309,7 @@ public class DashboardActivity extends BaseActivity {
         Fragment f = getSupportFragmentManager().findFragmentById(R.id.frame_container);
         if (f != null && f instanceof HomeFragment) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-            //toolbar.setTitle("");
+            // toolbar.setTitle("");
             if (doubleBackToExitPressedOnce) {
                 finishAffinity();
                 return;
@@ -335,11 +329,11 @@ public class DashboardActivity extends BaseActivity {
                     intent.putExtra(Constants.from, getCurrentFragment(f));
                     LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
                     getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-                    //toolbar.setTitle("");
+                    // toolbar.setTitle("");
                 }
                 tabLayout.getTabAt(0).select();
             }
-            //gotoHome();
+            gotoHome();
         }
     }
 
@@ -450,7 +444,6 @@ public class DashboardActivity extends BaseActivity {
             conf.locale = savedLocale;
             resources.updateConfiguration(conf, null);
         }
-
         return result;
     }
 
@@ -485,9 +478,40 @@ public class DashboardActivity extends BaseActivity {
         }
     }
 
+    public void gotoHome() {
+        try {
+            getSupportFragmentManager().popBackStack();
+            Fragment f = getSupportFragmentManager().findFragmentById(R.id.frame_container);
+            if (curr_tabPosition == 0) {
+                int textColor = R.color.red;
+                setSelectedTabChanges(gettabview(curr_tabPosition), R.drawable.ic_s_home, textColor);
+                gettabview1().setSelectedTabIndicatorColor(ContextCompat.getColor(this, R.color.red));//put your color
+                toolbar_title.setText(from);
+            } else if (curr_tabPosition == 1) {
+                int textColor = R.color.red;
+                setSelectedTabChanges(gettabview(curr_tabPosition), R.drawable.ic_s_fav, textColor);
+                gettabview1().setSelectedTabIndicatorColor(ContextCompat.getColor(this, R.color.red));//put your color
+            } else if (curr_tabPosition == 2) {
+                int textColor = R.color.red;
+                setSelectedTabChanges(gettabview(curr_tabPosition), R.drawable.ic_s_ads, textColor);
+                gettabview1().setSelectedTabIndicatorColor(ContextCompat.getColor(this, R.color.red));//put your color
+            } else if (curr_tabPosition == 3) {
+                int textColor = R.color.red;
+                setSelectedTabChanges(gettabview(curr_tabPosition), R.drawable.ic_s_profile, textColor);
+                gettabview1().setSelectedTabIndicatorColor(ContextCompat.getColor(this, R.color.red));//put your color
+            } else if (curr_tabPosition == 4) {
+                int textColor = R.color.red;
+                setSelectedTabChanges(gettabview(curr_tabPosition), R.drawable.ic_s_more, textColor);
+                gettabview1().setSelectedTabIndicatorColor(ContextCompat.getColor(this, R.color.red));//put your color
+            }
+        } catch (Exception e) {
+            Logger.debugE(e.toString());
+        }
+    }
+
     public void setTitle(String title) {
         try {
-            tv_title.setText(title.toString());
+            toolbar_title.setText(title.toString());
         } catch (Exception e) {
             e.printStackTrace();
         }
