@@ -6,12 +6,18 @@
 
     <include layout="@layout/toolbar" />
 
+    <include
+        layout="@layout/header_lay"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/toolbar" />
+
     <FrameLayout
         android:id="@+id/frame_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/tablayout"
-        android:layout_below="@+id/toolbar"
+        android:layout_below="@+id/ll_head"
         app:layout_behavior="com.q8munasabat.utills.FixScrollingFooterBehaviour" />
 
     <View
@@ -25,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
+        android:background="@color/lightBlue"
         app:tabGravity="fill"
         app:tabIndicatorColor="@color/red"
         app:tabIndicatorHeight="3dp"

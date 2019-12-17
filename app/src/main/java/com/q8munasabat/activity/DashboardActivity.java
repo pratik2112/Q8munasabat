@@ -16,10 +16,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
+import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -49,6 +53,19 @@ import butterknife.ButterKnife;
 
 public class DashboardActivity extends BaseActivity {
 
+    @BindView(R.id.tv_title)
+    TextView tv_title;
+    @BindView(R.id.iv_back)
+    ImageView iv_back;
+    @BindView(R.id.iv_search)
+    ImageView iv_search;
+    @BindView(R.id.iv_profile)
+    ImageView iv_profile;
+    @BindView(R.id.iv_filter)
+    ImageView iv_filter;
+
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
     @BindView(R.id.tablayout)
     TabLayout tabLayout;
     @BindView(R.id.frame_container)
@@ -75,7 +92,7 @@ public class DashboardActivity extends BaseActivity {
     @Override
     protected void onViewReady(Bundle savedInstanceState, Intent intent) {
         super.onViewReady(savedInstanceState, intent);
-        //setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar);
         changeSystemLanguage();
         inticompnets();
     }
@@ -230,6 +247,21 @@ public class DashboardActivity extends BaseActivity {
                     }
                 }
             });
+
+            getSupportFragmentManager().addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
+                @Override
+                public void onBackStackChanged() {
+                    if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+                        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+                            @Override
+                            public void onClick(View v) {
+                                onBackPressed();
+                            }
+                        });
+                    }
+                }
+            });
         } catch (Exception e) {
             Log.d("main activity", "" + e.toString());
         }
@@ -322,7 +354,7 @@ public class DashboardActivity extends BaseActivity {
                 currentFragment = 2;
             } else if (fragment instanceof HomeFragment) {
                 currentFragment = 3;
-            } else if (fragment instanceof HomeFragment) {
+            } else if (fragment instanceof MoreFragment) {
                 currentFragment = 4;
             }
         } catch (Exception e) {
@@ -453,4 +485,11 @@ public class DashboardActivity extends BaseActivity {
         }
     }
 
+    public void setTitle(String title) {
+        try {
+            tv_title.setText(title.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
