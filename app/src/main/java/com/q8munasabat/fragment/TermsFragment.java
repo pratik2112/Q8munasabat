@@ -6,9 +6,6 @@ import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -98,9 +95,9 @@ public class TermsFragment extends BaseFragment {
                 Map<String, String> mParams = new HashMap<>();
                 mParams.put(Constants.apikey, Q8MunasabatConfig.APIKEY);
                 mParams.put(Constants.languageid, lang);
-                /*if (CommonFunctions.getloginresponse(getContext()) != null)
+                if (CommonFunctions.getloginresponse(getContext()) != null)
                     membr_id = CommonFunctions.getloginresponse(getContext()).data.id;
-                else*/
+                else
                     membr_id = "";
                 mParams.put(Constants.member_id, membr_id);
                 JSONObject data = new JSONObject();

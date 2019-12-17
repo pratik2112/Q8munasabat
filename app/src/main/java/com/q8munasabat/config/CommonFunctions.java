@@ -43,6 +43,8 @@ import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.nispok.snackbar.Snackbar;
 import com.q8munasabat.R;
+import com.q8munasabat.model.LoginResponse;
+import com.q8munasabat.model.UserDetailResponse;
 import com.q8munasabat.reciver.ConnectivityReceiver;
 import com.q8munasabat.utills.Exiter;
 
@@ -859,7 +861,7 @@ public class CommonFunctions {
                 .into(imageView);
     }
 
-    /*public static LoginResponse getloginresponse(Context context) {
+    public static LoginResponse getloginresponse(Context context) {
         LoginResponse loginResponse = null;
         loginResponse = new Gson().fromJson(CommonFunctions.getPreference(context, Constants.userdata, "").toString(), LoginResponse.class);
         return loginResponse;
@@ -869,7 +871,7 @@ public class CommonFunctions {
         UserDetailResponse userDetailResponse = null;
         userDetailResponse = new Gson().fromJson(CommonFunctions.getPreference(context, Constants.userdetail, "").toString(), UserDetailResponse.class);
         return userDetailResponse;
-    }*/
+    }
 
     public static boolean CheckGpsStatus(Activity context) {
         LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);

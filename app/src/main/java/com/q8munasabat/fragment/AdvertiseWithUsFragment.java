@@ -4,9 +4,6 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -19,6 +16,7 @@ import com.q8munasabat.config.CommonFunctions;
 import com.q8munasabat.config.Constants;
 import com.q8munasabat.config.Q8MunasabatConfig;
 import com.q8munasabat.config.WebService;
+import com.q8munasabat.model.CheckExistResponse;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -37,13 +35,11 @@ public class AdvertiseWithUsFragment extends BaseFragment {
     EditText edt_fname;
     @BindView(R.id.edt_email)
     EditText edt_email;
-    /*@BindView(R.id.ccp_cuntry_code)
-    CountryCodePicker ccp_cuntry_code;*/
     @BindView(R.id.edt_mobile)
     EditText edt_mobile;
     View rootView;
     String lang;
-    //CheckExistResponse checkExistResponse;
+    CheckExistResponse checkExistResponse;
 
     public static AdvertiseWithUsFragment newInstance() {
         return new AdvertiseWithUsFragment();
@@ -101,6 +97,8 @@ public class AdvertiseWithUsFragment extends BaseFragment {
                 showAlertDialog(getString(R.string.app_name), getString(R.string.err_name));
             else if (edt_email.getText().toString().length() == 0)
                 showAlertDialog(getString(R.string.app_name), getString(R.string.err_email));
+            else if (!edt_email.getText().toString().trim().matches(Constants.emailvalid))
+                showAlertDialog(getString(R.string.app_name), getString(R.string.err_valid_email));
             else if (edt_mobile.getText().toString().length() == 0 || edt_mobile.getText().toString().length() < 8)
                 showAlertDialog(getString(R.string.app_name), getString(R.string.err_mobil));
             else
@@ -114,9 +112,9 @@ public class AdvertiseWithUsFragment extends BaseFragment {
         try {
             if (CommonFunctions.checkConnection(getActivity())) {
                 String membr_id = "";
-               /* if (CommonFunctions.getloginresponse(getContext()) != null)
+                if (CommonFunctions.getloginresponse(getContext()) != null)
                     membr_id = CommonFunctions.getloginresponse(getContext()).data.id;
-                else*/
+                else
                     membr_id = "";
                 CommonFunctions.createProgressBar(getActivity(), getString(R.string.msg_please_wait));
                 String url = Q8MunasabatConfig.WEBURL + Q8MunasabatConfig.advertiseURL;
@@ -126,7 +124,7 @@ public class AdvertiseWithUsFragment extends BaseFragment {
                 JSONObject jsonObject = new JSONObject();
                 jsonObject.put(Constants.memberid, membr_id);
                 jsonObject.put(Constants.name, edt_fname.getText().toString());
-                jsonObject.put(Constants.mobileno, /*ccp_cuntry_code.getSelectedCountryCodeWithPlus()*/"+965" + edt_mobile.getText().toString());
+                jsonObject.put(Constants.mobileno, "+965" + edt_mobile.getText().toString());
                 jsonObject.put(Constants.email, edt_email.getText().toString());
                 mParams.put(Constants.data, String.valueOf(jsonObject));
 
@@ -146,9 +144,9 @@ public class AdvertiseWithUsFragment extends BaseFragment {
                         try {
                             CommonFunctions.destroyProgressBar();
                             Gson gson = new Gson();
-                            /*checkExistResponse = gson.fromJson(result.toString(), CheckExistResponse.class);
-                            showAlertDialog(getString(R.string.app_name), checkExistResponse.error);*/
-                            ((DashboardActivity) getActivity()).addFragment(new HomeFragment());
+                            checkExistResponse = gson.fromJson(result.toString(), CheckExistResponse.class);
+                            showAlertDialog(getString(R.string.app_name), checkExistResponse.error);
+                            ((DashboardActivity) getActivity()).addFragment(new MoreFragment());
                         } catch (Exception e) {
                             e.printStackTrace();
                         }

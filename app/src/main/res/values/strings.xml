@@ -94,4 +94,7 @@
     <string name="subject">Download Amazing app from play store : </string>
     <string name="google_url">https://play.google.com/store/apps/details?id=</string>
 
+    <!-- No record found -->
+    <string name="no_record_found">No record found.</string>
+
 </resources>

@@ -22,6 +22,7 @@ import com.q8munasabat.config.CommonFunctions;
 import com.q8munasabat.config.Constants;
 import com.q8munasabat.config.Q8MunasabatConfig;
 import com.q8munasabat.config.WebService;
+import com.q8munasabat.model.UserDetailResponse;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -109,10 +110,10 @@ public class SettingsFragment extends BaseFragment {
     public void getuserData() {
         try {
             String membr_id = "";
-            /*if (CommonFunctions.getloginresponse(getActivity()) != null)
+            if (CommonFunctions.getloginresponse(getActivity()) != null)
                 membr_id = CommonFunctions.getloginresponse(getActivity()).data.id;
-            else*/
-            membr_id = "";
+            else
+                membr_id = "";
             String url = Q8MunasabatConfig.WEBURL + Q8MunasabatConfig.userdetailURL;
             Map<String, String> mParams = new HashMap<>();
             mParams.put(Constants.apikey, Q8MunasabatConfig.APIKEY);
@@ -136,11 +137,11 @@ public class SettingsFragment extends BaseFragment {
                 public void OnSuccess(String result) {
                     try {
                         Gson gson = new Gson();
-                        /*UserDetailResponse userDetailResponse = gson.fromJson(result.toString(), UserDetailResponse.class);
+                        UserDetailResponse userDetailResponse = gson.fromJson(result.toString(), UserDetailResponse.class);
                         if (userDetailResponse.data.sharephonenumber.equals("1"))
                             sw_share_phn.setChecked(true);
                         else
-                            sw_share_phn.setChecked(false);*/
+                            sw_share_phn.setChecked(false);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -204,10 +205,10 @@ public class SettingsFragment extends BaseFragment {
         try {
             if (CommonFunctions.checkConnection(getActivity())) {
                 String membr_id, switch_check = "";
-               /* if (CommonFunctions.getloginresponse(getContext()) != null)
+                if (CommonFunctions.getloginresponse(getContext()) != null)
                     membr_id = CommonFunctions.getloginresponse(getContext()).data.id;
-                else*/
-                membr_id = "";
+                else
+                    membr_id = "";
                 if (sw_share_phn.isChecked())
                     switch_check = "1";
                 else
@@ -255,10 +256,10 @@ public class SettingsFragment extends BaseFragment {
                 public void onClick(DialogInterface dialog, int which) {
                     if (CommonFunctions.checkConnection(getActivity())) {
                         String membr_id = "";
-                        /*if (CommonFunctions.getloginresponse(getContext()) != null)
+                        if (CommonFunctions.getloginresponse(getContext()) != null)
                             membr_id = CommonFunctions.getloginresponse(getContext()).data.id;
-                        else*/
-                        membr_id = "";
+                        else
+                            membr_id = "";
                         String url = Q8MunasabatConfig.WEBURL + Q8MunasabatConfig.deactiveacuntURL;
                         Map<String, String> mParams = new HashMap<>();
                         mParams.put(Constants.apikey, Q8MunasabatConfig.APIKEY);
@@ -279,7 +280,7 @@ public class SettingsFragment extends BaseFragment {
                             public void OnSuccess(String result) {
                                 CommonFunctions.setPreference(getActivity(), Constants.isLogin, false);
                                 CommonFunctions.setPreference(getActivity(), Constants.userdata, "");
-                                CommonFunctions.changeactivity(getActivity(), DashboardActivity.class);
+                                CommonFunctions.changeactivity(getActivity(), DashboardActivity.class); // 123
                             }
 
                             @Override

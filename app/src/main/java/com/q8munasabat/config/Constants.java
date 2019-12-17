@@ -201,6 +201,7 @@ public class Constants {
     public static String utf8 = "utf-8";
     public static int VIDEO_TRIM = 60;
 
+    public static String emailvalid = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     public static String WebUrl = "^((ftp|http|https):\\/\\/)?(www.)?(?!.*(ftp|http|https|www.))[a-zA-Z0-9_-]+(\\.[a-zA-Z]+)+((\\/)[\\w#]+)*(\\/\\w+\\?[a-zA-Z0-9_]+=\\w+(&[a-zA-Z0-9_]+=\\w+)*)?$";
     public static String slug = "slug";
     public static String about_us = "about-us";

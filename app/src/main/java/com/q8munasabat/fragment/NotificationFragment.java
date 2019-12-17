@@ -8,16 +8,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
 import com.q8munasabat.R;
 import com.q8munasabat.activity.DashboardActivity;
+import com.q8munasabat.adapter.NotificationAdapter;
 import com.q8munasabat.base.BaseFragment;
 import com.q8munasabat.config.CommonFunctions;
 import com.q8munasabat.config.Constants;
 import com.q8munasabat.config.Q8MunasabatConfig;
 import com.q8munasabat.config.WebService;
+import com.q8munasabat.model.NotificationResponse;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -37,8 +41,8 @@ public class NotificationFragment extends BaseFragment {
     @BindView(R.id.tv_empty)
     TextView tv_empty;
 
-    /*NotificationResponse notificationResponse;
-    NotificationAdapter notificationAdapter;*/
+    NotificationResponse notificationResponse;
+    NotificationAdapter notificationAdapter;
     String lang;
 
     @Override
@@ -95,10 +99,10 @@ public class NotificationFragment extends BaseFragment {
         try {
             if (CommonFunctions.checkConnection(getActivity())) {
                 String membr_id = "";
-                /*if (CommonFunctions.getloginresponse(getContext()) != null)
+                if (CommonFunctions.getloginresponse(getContext()) != null)
                     membr_id = CommonFunctions.getloginresponse(getContext()).data.id;
-                else*/
-                membr_id = "";
+                else
+                    membr_id = "";
                 String url = Q8MunasabatConfig.WEBURL + Q8MunasabatConfig.getnotoficationuser;
                 Map<String, String> mParams = new HashMap<>();
                 mParams.put(Constants.apikey, Q8MunasabatConfig.APIKEY);
@@ -120,8 +124,8 @@ public class NotificationFragment extends BaseFragment {
                     public void OnSuccess(String result) {
                         try {
                             Gson gson = new Gson();
-                            /*notificationResponse = gson.fromJson(result.toString(), NotificationResponse.class);
-                            setadapterTrans(notificationResponse);*/
+                            notificationResponse = gson.fromJson(result.toString(), NotificationResponse.class);
+                            setadapterTrans(notificationResponse);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -137,7 +141,7 @@ public class NotificationFragment extends BaseFragment {
         }
     }
 
-    /*private void setadapterTrans(NotificationResponse transcationResponse) {
+    private void setadapterTrans(NotificationResponse transcationResponse) {
         try {
             if (transcationResponse.data == null || transcationResponse.data.size() == 0) {
                 tv_empty.setVisibility(View.VISIBLE);
@@ -155,5 +159,5 @@ public class NotificationFragment extends BaseFragment {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }*/
+    }
 }
