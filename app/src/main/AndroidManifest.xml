@@ -29,7 +29,6 @@
         tools:ignore="GoogleAppIndexingWarning"
         tools:node="merge"
         tools:replace="android:supportsRtl,android:allowBackup">
-        <activity android:name=".activity.LoginActivity"></activity>
         <activity
             android:name=".activity.SplashActivity"
             android:screenOrientation="portrait"
@@ -41,7 +40,19 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".activity.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+
+        <activity
             android:name=".activity.DashboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+
+        <activity
+            android:name=".activity.LangActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />

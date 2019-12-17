@@ -18,6 +18,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.gson.Gson;
 import com.q8munasabat.R;
 import com.q8munasabat.activity.DashboardActivity;
+import com.q8munasabat.activity.LangActivity;
 import com.q8munasabat.base.BaseFragment;
 import com.q8munasabat.config.CommonFunctions;
 import com.q8munasabat.config.Constants;
@@ -92,10 +93,10 @@ public class SettingsFragment extends BaseFragment {
             ((DashboardActivity) getActivity()).setTitle(getString(R.string.tit_setting));
             ((DashboardActivity) getActivity()).shouldDisplayHomeUp(true);
 
-            // if (CommonFunctions.getPreference(getContext(), Constants.isLogin, false))
+            if (CommonFunctions.getPreference(getContext(), Constants.isLogin, false))
                 ll_acunt.setVisibility(View.VISIBLE);
-            /*else
-                ll_acunt.setVisibility(View.GONE);*/
+            else
+                ll_acunt.setVisibility(View.GONE);
 
             if (lang.equals("0"))
                 tv_lang.setText(getString(R.string.str_lang_e));
@@ -160,9 +161,9 @@ public class SettingsFragment extends BaseFragment {
     @OnClick(R.id.tv_lang)
     public void langageClick() {
         try {
-            /*Intent intent = new Intent(getActivity(), LangActivity.class);
+            Intent intent = new Intent(getActivity(), LangActivity.class);
             intent.putExtra(Constants.from, getString(R.string.tit_chos_lang));
-            startActivity(intent);*/
+            startActivity(intent);
         } catch (Exception e) {
             e.printStackTrace();
         }
