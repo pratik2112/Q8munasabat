@@ -13,6 +13,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.gson.Gson;
 import com.q8munasabat.R;
@@ -91,10 +92,10 @@ public class SettingsFragment extends BaseFragment {
             ((DashboardActivity) getActivity()).setTitle(getString(R.string.tit_setting));
             ((DashboardActivity) getActivity()).shouldDisplayHomeUp(true);
 
-            if (CommonFunctions.getPreference(getContext(), Constants.isLogin, false))
+            // if (CommonFunctions.getPreference(getContext(), Constants.isLogin, false))
                 ll_acunt.setVisibility(View.VISIBLE);
-            else
-                ll_acunt.setVisibility(View.GONE);
+            /*else
+                ll_acunt.setVisibility(View.GONE);*/
 
             if (lang.equals("0"))
                 tv_lang.setText(getString(R.string.str_lang_e));
@@ -186,7 +187,7 @@ public class SettingsFragment extends BaseFragment {
     @OnClick(R.id.tv_chng_pwd)
     public void chngpwdClick() {
         try {
-            /*FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
             transaction.setCustomAnimations(
                     R.anim.push_left_in,
                     R.anim.push_left_out,
@@ -194,7 +195,7 @@ public class SettingsFragment extends BaseFragment {
                     R.anim.push_left_out);
             transaction.replace(R.id.frame_container, new ChangePasswordFragment());
             transaction.addToBackStack(null);
-            transaction.commit();*/
+            transaction.commit();
         } catch (Exception e) {
             e.printStackTrace();
         }

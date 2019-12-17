@@ -56,6 +56,13 @@
     <string name="str_sub1">Name</string>
     <string name="str_email">Email</string>
     <string name="str_mobil">2234 5678</string>
+    <string name="str_pwd">Password</string>
+    <string name="str_conf_pwd">Confirm Password</string>
+    <string name="str_old_pwd">Old Password</string>
+    <string name="str_new_pwd">New Password</string>
+    <string name="str_chng">Change</string>
+    <string name="pwd_success">Password successfully changed.</string>
+    <string name="pwd_fail">Old password does not match.</string>
 
     <string name="menu_title_1">Home</string>
     <string name="menu_title_2">My favorites</string>
