@@ -1,6 +1,7 @@
 package com.q8munasabat.fragment;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,15 +9,24 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.google.gson.Gson;
 import com.q8munasabat.R;
 import com.q8munasabat.activity.DashboardActivity;
 import com.q8munasabat.base.BaseFragment;
 import com.q8munasabat.config.CommonFunctions;
 import com.q8munasabat.config.Constants;
+import com.q8munasabat.config.Q8MunasabatConfig;
+import com.q8munasabat.config.WebService;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -183,7 +193,71 @@ public class MoreFragment extends BaseFragment implements View.OnClickListener {
                 transSet.commit();
                 break;
             case R.id.ll_logout:
+                AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(getActivity());
+                dialogBuilder.setTitle(getString(R.string.str_are_u_sure));
+                dialogBuilder.setMessage(getString(R.string.str_logout));
+                dialogBuilder.setPositiveButton(getString(R.string.dialog_yes), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        logoutUser();
+                    }
+                });
+                dialogBuilder.setNegativeButton(getString(R.string.dialog_no), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+                dialogBuilder.setCancelable(false);
+                dialogBuilder.show();
                 break;
+        }
+    }
+
+    private void logoutUser() {
+        try {
+            if (CommonFunctions.checkConnection(getActivity())) {
+                String membr_id = "";
+                if (CommonFunctions.getloginresponse(getActivity()) != null)
+                    membr_id = CommonFunctions.getloginresponse(getActivity()).data.id;
+
+                String url = Q8MunasabatConfig.WEBURL + Q8MunasabatConfig.logoutURL;
+                Map<String, String> mParams = new HashMap<>();
+                mParams.put(Constants.apikey, Q8MunasabatConfig.APIKEY);
+                mParams.put(Constants.languageid, lang);
+                JSONObject jsonObject = new JSONObject();
+                jsonObject.put(Constants.memberid, membr_id);
+                mParams.put(Constants.data, String.valueOf(jsonObject));
+
+                WebService webService = new WebService(url, new JSONObject(), true, getActivity());
+                webService.getData(new WebService.OnResult() {
+                    @Override
+                    public void OnSuccess(JSONObject result) {
+                    }
+
+                    @Override
+                    public void OnSuccess(JSONArray result) {
+
+                    }
+
+                    @Override
+                    public void OnSuccess(String result) {
+                        try {
+                            Gson gson = new Gson();
+                            CommonFunctions.setPreference(getActivity(), Constants.isLogin, false);
+                            CommonFunctions.setPreference(getActivity(), Constants.userdata, "");
+                            CommonFunctions.changeactivity(getActivity(), DashboardActivity.class);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void OnFail(String error) {
+                    }
+                }, mParams);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

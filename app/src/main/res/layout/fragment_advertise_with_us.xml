@@ -49,6 +49,7 @@
                 android:nextFocusForward="@+id/edt_email"
                 android:padding="@dimen/tv_10"
                 android:singleLine="true"
+                android:textColorHint="@color/textColorPrimary"
                 android:textSize="@dimen/sp_16" />
         </LinearLayout>
 
@@ -80,6 +81,7 @@
                 android:nextFocusForward="@+id/edt_mobile"
                 android:padding="@dimen/tv_10"
                 android:singleLine="true"
+                android:textColorHint="@color/textColorPrimary"
                 android:textSize="@dimen/sp_16" />
         </LinearLayout>
 
@@ -120,6 +122,7 @@
                 android:maxLines="1"
                 android:padding="@dimen/tv_10"
                 android:singleLine="true"
+                android:textColorHint="@color/textColorPrimary"
                 android:textSize="@dimen/sp_16" />
         </LinearLayout>
 

@@ -76,6 +76,7 @@ public class LangActivity extends BaseActivity implements View.OnClickListener {
                 }
             }
             tv_title.setText(from);
+            iv_home.setVisibility(View.VISIBLE);
 
             SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
             String strLang = defaultSharedPreferences.getString("lang", "en");

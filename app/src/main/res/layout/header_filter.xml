@@ -6,18 +6,6 @@
     android:background="@color/lightBlue"
     android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/tv_title"
-        style="@style/lblSemiB"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:paddingLeft="@dimen/tv_10"
-        android:text="@string/app_name"
-        android:textColor="@color/white"
-        android:textSize="@dimen/sp_16" />
-
     <ImageView
         android:id="@+id/iv_home"
         android:layout_width="wrap_content"
@@ -39,6 +27,19 @@
         android:src="@drawable/ic_search"
         android:tint="@color/white"
         android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        style="@style/lblSemiB"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:paddingLeft="@dimen/tv_10"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16" />
 
     <ImageView
         android:id="@+id/iv_profile"

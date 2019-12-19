@@ -12,8 +12,22 @@
     <string name="dialog_no">NO</string>
     <string name="dialog_ok">OK</string>
 
+    <string name="str_skip">Skip</string>
     <string name="str_or">OR</string>
     <string name="str_submit">Submit</string>
+
+    <string name="tit_login">LOGIN</string>
+    <string name="tit_signup">SIGN UP</string>
+    <string name="tit_code_verify">CODE VERIFICATION</string>
+    <string name="tit_home">HOME</string>
+    <string name="tit_forgt">Forgot Password</string>
+    <string name="tit_profile">PROFILE</string>
+    <string name="tit_edit_profile">Edit Profile</string>
+    <string name="tit_setting">Settings</string>
+    <string name="tit_chos_lang">CHOOSE LANGUAGE</string>
+    <string name="tit_chng_pwd">Change Password</string>
+    <string name="tit_filtr">Filter</string>
+    <string name="tit_cate">CATEGORY</string>
 
     <string name="str_are_u_sure">Are you sure ?</string>
     <string name="str_deactive_msg">Do you want to deactive account ?</string>
@@ -39,30 +53,29 @@
     <string name="str_lang_e">English</string>
     <string name="str_lang_a">عربى</string>
 
-    <string name="tit_login">LOGIN</string>
-    <string name="tit_signup">SIGN UP</string>
-    <string name="tit_code_verify">CODE VERIFICATION</string>
-    <string name="tit_home">HOME</string>
-    <string name="tit_forgt">Forgot Password</string>
-    <string name="tit_profile">PROFILE</string>
-    <string name="tit_edit_profile">Edit Profile</string>
-    <string name="tit_setting">Settings</string>
-    <string name="tit_chos_lang">CHOOSE LANGUAGE</string>
-    <string name="tit_chng_pwd">Change Password</string>
-    <string name="tit_filtr">Filter</string>
-    <string name="tit_cate">CATEGORY</string>
-
+    <string name="str_login">Login</string>
+    <string name="str_sign_up">Sign Up</string>
     <string name="str_filter1">Apply Filter</string>
     <string name="str_sub1">Name</string>
+    <string name="str_fname">First Name</string>
+    <string name="str_lname">Last Name</string>
     <string name="str_email">Email</string>
     <string name="str_mobil">2234 5678</string>
+    <string name="str_forgot">Forgot Password</string>
+    <string name="str_email_mobil">Email or mobile number</string>
     <string name="str_pwd">Password</string>
     <string name="str_conf_pwd">Confirm Password</string>
     <string name="str_old_pwd">Old Password</string>
     <string name="str_new_pwd">New Password</string>
     <string name="str_chng">Change</string>
+    <string name="str_dont_hve">Don\'t have account ? Sign Up</string>
+    <string name="str_upload_pic">Upload your profile picture</string>
+    <string name="str_verify">Verify</string>
+    <string name="str_resend">Resend</string>
+
     <string name="pwd_success">Password successfully changed.</string>
     <string name="pwd_fail">Old password does not match.</string>
+    <string name="otp_verify">Please type the verification code sent to</string>
 
     <string name="menu_title_1">Home</string>
     <string name="menu_title_2">My favorites</string>
@@ -82,6 +95,7 @@
     <string name="tab_title_2">Latest Event</string>
     <string name="tab_title_3">Map</string>
 
+    <string name="err_camera">Please select your image</string>
     <string name="err_name">Please enter your name</string>
     <string name="err_fname">Please enter your first name</string>
     <string name="err_lname">Please enter your last name</string>
@@ -96,6 +110,7 @@
     <string name="err_conf_pwd">Please enter your confirm password</string>
     <string name="err_conf_pwd1">Please enter confirm password between 6 to 20 characters !</string>
     <string name="err_invalid">Invalid email or password</string>
+    <string name="err_invalid_otp">Please enter valid otp code</string>
     <string name="err_mismatch">Password and confirm password doesn\'t match</string>
 
     <string name="subject">Download Amazing app from play store : </string>
@@ -103,5 +118,28 @@
 
     <!-- No record found -->
     <string name="no_record_found">No record found.</string>
+
+    <string name="error_failed_to_create_camera_image_file">Failed to create Camera image file</string>
+    <string name="error_failed_pick_gallery_image">Failed to pick Gallery image</string>
+    <string name="error_failed_to_crop_image">Failed to crop image</string>
+    <string name="error_failed_to_compress_image">Failed to compress image</string>
+    <string name="error_task_cancelled">Task Cancelled</string>
+    <string name="file_provider_authorities">com.q8munasabat.imagepicker.provider.CustomFileProvider</string>
+
+    <string name="title_choose_image_provider">Choose</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="title_gallery">Gallery</string>
+    <string name="title_camera">Camera</string>
+
+    <string name="image_picker_provider_authority_suffix">.provider</string>
+
+    <string name="message_gallery_permission_denied">Read External Storage permissions is needed to select Image. Please turn on requested permissions from Settings > Permissions.</string>
+    <string name="message_camera_permission_denied">Camera and External Storage permissions are needed to capture image. Turning off any permission won\'t allow application run smoothly. Please turn on all requested permissions from Settings > Permissions.</string>
+    <string name="permission_gallery_denied">
+        <![CDATA[Storage permission is needed to pick gallery image. Please allow storage permission from Settings > Permissions.]]></string>
+    <string name="permission_camera_extended_denied">
+        <![CDATA[Camera and Storage permissions are needed to take a picture. Please allow both the requested permissions from Settings > Permissions.]]></string>
+    <string name="permission_camera_denied">
+        <![CDATA[Storage permission is needed to take a picture. Please allow storage permission from Settings > Permissions.]]></string>
 
 </resources>

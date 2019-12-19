@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/header_lay" />
+
+    <include layout="@layout/header_filter" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/tv_22"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="@dimen/tv_22"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:src="@drawable/ic_chat_otp" />
+
+            <TextView
+                style="@style/lblSemiB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/tv_15"
+                android:gravity="center"
+                android:text="@string/otp_verify"
+                android:textSize="@dimen/sp_15" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tv_10"
+                android:gravity="center"
+                android:layoutDirection="ltr"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_otp_code"
+                    style="@style/lblSemiB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/tv_3"
+                    android:gravity="center"
+                    android:textSize="@dimen/sp_16" />
+
+                <TextView
+                    android:id="@+id/tv_otp_msg"
+                    style="@style/lblSemiB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/tv_3"
+                    android:gravity="center"
+                    android:textSize="@dimen/sp_16" />
+            </LinearLayout>
+
+            <com.q8munasabat.utills.OtpEditText
+                android:id="@+id/et_otp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tv_10"
+                android:cursorVisible="false"
+                android:digits="1234567890"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:layoutDirection="ltr"
+                android:maxLength="6"
+                android:singleLine="true"
+                android:textIsSelectable="false"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_verify"
+                style="@style/lblSemiB"
+                android:layout_width="160dp"
+                android:layout_height="40dip"
+                android:layout_marginTop="@dimen/tv_10"
+                android:background="@drawable/btn_signup_bg"
+                android:text="@string/str_verify"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16" />
+
+            <TextView
+                android:id="@+id/tv_resend"
+                style="@style/lblSemiB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:enabled="false"
+                android:gravity="center"
+                android:text="@string/str_resend"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/sp_16"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_seond_remain"
+                style="@style/lblSemiB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/sp_16" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>
